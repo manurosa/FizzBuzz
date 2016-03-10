@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace FizzBuzz
 {
-    public class Class1
+    class FizzBuzz
     {
+        private int number { get; set; }
+
+        public FizzBuzz (int number)
+        {
+
+        }
+
     }
 }
