@@ -1,20 +1,23 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace FizzTest
 {
-    [TestClass]
+    [TestFixture]
     public class UnitTest1
     {
-        [TestMethod]
-        public void TestMethod1()
+        [TestCase(1,"1")]
+        [TestCase(2, "2")]
+        [TestCase(3, "Fizz")]
+        [TestCase(5, "Buzz")]
+        [TestCase(15, "FizzBuzz")]
+        public void Test_FizzBuzz_DoIt(int number, string result)
         {
-            //var fizzResult = método aplicado a 3
-            //var buzzResult= método aplicado a 5
-            //var fizzBuzzRestuls= método aplicado a 15
-            Assert.AreEqual(fizzResult, "fizz");
-            Assert.AreEqual(buzzResult, "buzz");
-            Assert.AreEqual(fizzBuzzresult, "fizzbuzz");
+            FizzBuzz.FizzBuzz test = new FizzBuzz.FizzBuzz();
+
+            string fizzResult = test.DoIt(number);
+
+            Assert.AreEqual(fizzResult, result);
         }
     }
 }

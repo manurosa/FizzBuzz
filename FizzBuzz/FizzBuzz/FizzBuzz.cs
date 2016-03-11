@@ -6,13 +6,29 @@ using System.Threading.Tasks;
 
 namespace FizzBuzz
 {
-    class FizzBuzz
+    public class FizzBuzz
     {
-        private int number { get; set; }
-
-        public FizzBuzz (int number)
+        public FizzBuzz ()
         {
 
+        }
+
+        Dictionary<int, string> rules = new Dictionary<int, string>()
+        {
+            {15, "FizzBuzz" },
+            {5, "Buzz" },
+            {3, "Fizz" }
+        };
+        
+        public string DoIt(int number)
+        {
+            foreach (var key in rules.Keys)
+            {
+                if (number % key == 0)
+                    return rules[key];
+            }
+
+            return number.ToString();
         }
 
     }
